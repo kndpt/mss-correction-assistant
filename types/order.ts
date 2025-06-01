@@ -133,7 +133,7 @@ export type IOrder = {
   service: IServiceOrder;
   displayName: string;
   fixedFilePath?: string;
-}
+};
 
 export enum EOrderStatus {
   PENDING = "pending",
@@ -173,6 +173,7 @@ export interface IOptionDurationLimits {
   three_days: number;
   one_week: number;
   two_weeks: number;
+  three_weeks: boolean;
 }
 
 export interface IOptionDuration {
@@ -181,6 +182,7 @@ export interface IOptionDuration {
   three_days: boolean;
   one_week: boolean;
   two_weeks: boolean;
+  three_weeks: boolean;
 }
 
 export interface TDurationOption {

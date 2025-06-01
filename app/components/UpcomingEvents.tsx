@@ -60,7 +60,9 @@ const UpcomingEvent: React.FC<UpcomingEventProps> = ({ order }) => {
       </div>
 
       <div className="flex items-center gap-2 mb-1">
-        <h6 className="text-xl leading-8 font-semibold text-black">{order.displayName}</h6>
+        <h6 className="text-xl leading-8 font-semibold text-black">
+          {order.displayName} ({order.service.price}€)
+        </h6>
       </div>
 
       <div className="flex items-center gap-2 mb-3">

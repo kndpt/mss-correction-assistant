@@ -23,6 +23,27 @@ export const getOrderStatus = (status: EOrderStatus): string => {
   }
 };
 
+export const getOrderStatusChipColor = (status: EOrderStatus) => {
+  switch (status) {
+    case EOrderStatus.PAID:
+      return "secondary";
+    case EOrderStatus.FAILED:
+      return "error";
+    case EOrderStatus.IN_PROGRESS:
+      return "info";
+    case EOrderStatus.CANCELED:
+      return "warning";
+    case EOrderStatus.REFUNDED:
+      return "warning";
+    case EOrderStatus.DONE:
+      return "default";
+    case EOrderStatus.PENDING:
+      return "default";
+    default:
+      return "default";
+  }
+};
+
 export const getOrderType = (type: IOptionType): string =>
   `${type.proofreading_and_correction ? "Correction" : "Correction et embellissement"}`;
 
@@ -54,6 +75,8 @@ export const calculateDays = (service: IServiceOrder) => {
     daysTotal = 7;
   } else if (service.optionDuration.two_weeks) {
     daysTotal = 14;
+  } else if (service.optionDuration.three_weeks) {
+    daysTotal = 21;
   } else {
     throw new Error("Option de délai non prise en charge");
   }
